@@ -27,10 +27,20 @@ app.set('port',(process.env.PORT || 3000));
 var people = ['awd','awdsf','trgfds'];
 
 app.get('/',function(req, res){
+	var details;
+	con.connect(function(err) {
+	  if (err) throw err;
+	  con.query("SELECT * FROM customers WHERE address = 'Park Lane 38'", function (err, result) {
+	    if (err) throw err;
+	    console.log(result);
+	    details = result;
+	  });
+	});
 	res.render('home',{
 		content:'This is content',
 		published: true,
 		people:people
+		details:details;
 	});
 });
 

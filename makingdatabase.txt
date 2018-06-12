@@ -1,0 +1,3 @@
+create database healthcare;
+use healthcare;
+create table patient ( patient_id int, name varchar(50), age int, diagnostic_info varchar(250), doctor varchar(50));
