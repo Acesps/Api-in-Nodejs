@@ -1,0 +1,17 @@
+{
+  "name": "nodeapplication",
+  "version": "1.0.0",
+  "description": "simpleWebApp",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "*",
+    "express-handlebars": "*",
+    "mysql": "^2.15.0"
+  },
+  "author": "Shubham Singal",
+  "license": "ISC"
+}
