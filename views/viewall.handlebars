@@ -1,0 +1,31 @@
+<div align="center">
+	<br>
+		<h1>Patients Data<h1>
+	<br>
+</div>
+
+<div class = "container-fluid" style="width:100%" align="center">
+<table class="table">
+  <thead class="table thead-dark">
+    <tr style ="padding: 15px;">
+      <th style ="padding: 15px;" scope="col">Patient Id</th>
+      <th style ="padding: 15px;" scope="col">Name</th>
+      <th style ="padding: 15px;" scope="col">Age</th>
+      <th style ="padding: 15px;" scope="col">Diagnostic Info</th>
+      <th style ="padding: 15px;" scope="col">Doctor</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each details}}
+      <tr>
+        <th scope="row">{{patient_id}}</th>
+        <td>{{name}}</td>
+        <td>{{age}}</td>
+        <td>{{diagnostic_info}}</td>
+        <td>{{doctor}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+

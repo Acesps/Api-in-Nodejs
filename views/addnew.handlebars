@@ -1,0 +1,59 @@
+<div style="margin:auto; width:80%;">
+    <h3>Enter Patient Details</h3>
+    <form action="/addnew" style="padding:3%;" method="POST" id="patientform">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="pid">Patient ID</label>
+                <input type="text" class="form-control" name="patient_id" placeholder="Patient Identification No">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="name">Patient Name</label>
+                <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+           <div class="form-group col-md-2">
+                <label for="age">Age</label>
+                <input type="number" class="form-control" name="age" placeholder="Age">
+            </div>
+        </div>
+
+        
+        
+        <div class="form-group">
+            <label for="diagnostic_info">Diagnostic Info</label>
+            <input type="text" class="form-control" name="diagnostic_info" placeholder="details please">
+        </div>
+        <div class="form-group">
+            <label for="Doctor">Doctor</label>
+            <input type="text" class="form-control" name="doctor" placeholder="Doctor">
+        </div>
+        <div class="form-row">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <p id='stat' class="text-success" style="margin-left:5%;"></p>
+        <p id='fstat' class="text-danger" style="margin-left:5%;"></p>
+        </div>
+    </form>
+    
+
+<script>
+    $("#patientform").submit(function( event ) {
+        event.preventDefault();
+        var data = $('#patientform').serialize();
+        console.log(data);
+        axios({
+            method: 'post',
+            url: '/addnew',
+            data: data
+        })
+        .then(function (response) {
+            if(response.data=='Success') toastr.success(response.data)
+            else toastr.error(response.data)
+        })
+        .catch(function (error) {
+            toastr.error("Unable to contact server. Please try again.")
+        });
+    });
+</script>
+
+</div>

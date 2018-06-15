@@ -8,9 +8,11 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "*",
     "express-handlebars": "*",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "npm": "^6.1.0"
   },
   "author": "Shubham Singal",
   "license": "ISC"
